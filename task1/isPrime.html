@@ -1,0 +1,39 @@
+<!--JavaScript Program to Check Prime Number using function	-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check for Prime</title>
+</head>
+<body>
+    <h1>Check for Prime!</h1>
+    <form id="checkPrime">
+        <label>Enter your Number: </label>
+        <input type="number" id="numberInput" name="numberInput" />  
+        <button type="button" onclick="isPrimeCheck()">Check Prime</button>
+    </form>
+    <p id="isPrime"></p>
+
+    <script>
+        function isPrimeCheck() {
+            const marks = parseFloat(document.getElementById('numberInput').value);
+            if (marks < 2) {
+                prime = 'Not Prime';
+            } else {
+                for (let i = 2; i < marks; i++) {
+                    if (marks % i === 0) {
+                        document.getElementById('isPrime').innerHTML = marks + ' is Not Prime';
+                        break;
+                    } else {
+                        document.getElementById('isPrime').innerHTML =  marks + ' is Prime';
+                    }
+                }
+            }
+        }
+
+
+    </script>
+</body>
+</html>

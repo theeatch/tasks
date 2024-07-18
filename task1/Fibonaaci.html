@@ -1,0 +1,33 @@
+<!--JavaScript Program to Find the Factorial of a Number-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <h1>Calculate Fibonacci!</h1>
+    <form id="Fibonacci">
+        <label>Enter your Number: </label>
+        <input type="number" id="numberInput" name="numberInput" />  
+        <button type="button" onclick="Fibonacci()">Calculate Fibonacci</button>
+    </form>
+    <p id="Fibo"></p>
+
+    <script>
+        function Fibonacci() {
+            let number = parseFloat(document.getElementById('numberInput').value);
+            let result = 0;
+            let first = 0;
+            let second = 1;
+            for (let i = 2; i <= number; i++) {
+                result = first + second;
+                first = second;
+                second = result;
+            }
+            document.getElementById('Fibo').innerHTML = 'Fibonacci of ' + number + ' is ' + result;
+        }
+    </script>
+</body>
+</html>

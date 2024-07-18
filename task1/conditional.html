@@ -1,0 +1,81 @@
+<!--
+Write a program to find the grade of a student when grades are allocated as given in the table below. 
+Percentage of the marks obtained by the student is input to the program using switch case and conditional statement both											
+If marks <50 then Grade is F											
+if marks >=50 <60 then Grade is D											
+if marks >=60 <70 then Grade is C											
+if marks >=70 <80 then Grade is B											
+if marks >=80 <90 then Grade is A											
+if marks >=90 then Grade is A+											
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Calculator</title>
+</head>
+<body>
+    <h1>Grade Calculator</h1>
+    <form id="gradeForm">
+        <label for="marks">Enter your marks:</label>
+        <input type="number" id="marks" name="marks">
+        <button type="button" onclick="calculateGrade()">Calculate Grade</button>
+    </form>
+    <p id="resultSwitch"></p>
+    <p id="resultConditional"></p>
+    <script>
+        function findGradeUsingSwitch(marks) {
+            let grade;
+            switch (true) {
+                case (marks < 50):
+                    grade = 'F';
+                    break;
+                case (marks >= 50 && marks < 60):
+                    grade = 'D';
+                    break;
+                case (marks >= 60 && marks < 70):
+                    grade = 'C';
+                    break;
+                case (marks >= 70 && marks < 80):
+                    grade = 'B';
+                    break;
+                case (marks >= 80 && marks < 90):
+                    grade = 'A';
+                    break;
+                case (marks >= 90):
+                    grade = 'A+';
+                    break;
+                default:
+                    grade = 'Invalid marks';
+            }
+            return grade;
+        }
+
+        function findGradeUsingConditional(marks) {
+            if (marks < 50) {
+                return 'F';
+            } else if (marks >= 50 && marks < 60) {
+                return 'D';
+            } else if (marks >= 60 && marks < 70) {
+                return 'C';
+            } else if (marks >= 70 && marks < 80) {
+                return 'B';
+            } else if (marks >= 80 && marks < 90) {
+                return 'A';
+            } else if (marks >= 90) {
+                return 'A+';
+            } else {
+                return 'Invalid marks';
+            }
+        }
+
+        function calculateGrade() {
+            let marks = parseFloat(document.getElementById("marks").value);
+            document.getElementById("resultSwitch").innerText = "Grade using switch case: " + findGradeUsingSwitch(marks);
+            document.getElementById("resultConditional").innerText = "Grade using conditional statements: " + findGradeUsingConditional(marks);
+        }
+    </script>
+</body>
+</html>
